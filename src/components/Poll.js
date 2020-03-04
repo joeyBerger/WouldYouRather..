@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { answerQuestion } from '../actions/questions'
-import { addAnsweredQuestion } from '../actions/users'
+import { addAnsweredQuestio, handleAnsweredQuestion } from '../actions/users'
+import { Redirect } from 'react-router-dom'
 
 class Poll extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            selectedQuestion : ''
+            selectedQuestion : '',
+            toAnsweredPoll : false
         }
     }
     
@@ -26,19 +28,38 @@ class Poll extends Component {
     handleSubmitButton = (e) => {
         e.preventDefault();
         const { dispatch, id, authedUser } = this.props
+
+        dispatch(handleAnsweredQuestion({
+            authedUser,
+            qid : id,  //TODO: change id to qid
+            answer : 'optionOne'
+        }))
+        .then(() => this.setState(() => ({
+            toAnsweredPoll : true
+        })))
         
-        dispatch(answerQuestion({ 
-            id : id,
-            option : this.state.selectedQuestion,
-            user : authedUser,
-         }))
-         dispatch(addAnsweredQuestion({
-            user : authedUser,
-            questionID : id,
-         }))
+        // dispatch(answerQuestion({ 
+        //     id : id,
+        //     option : this.state.selectedQuestion,
+        //     user : authedUser,
+        //  }))
+        //  dispatch(addAnsweredQuestion({
+        //     user : authedUser,
+        //     questionID : id,
+        //  }))
     }   
 
     render() {
+
+        if (this.state.toAnsweredPoll) {
+            return <Redirect to={{
+                pathname: `/answeredpoll/${this.props.id}`,
+                // search: '?sort=name',
+                // hash: '#the-hash',
+                state: { id: this.props.id }
+            }} />
+        }
+
         const { question, user } = this.props
         const avatarURL = user.avatarURL
         const author = user.name

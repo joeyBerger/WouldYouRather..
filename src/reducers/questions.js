@@ -36,8 +36,9 @@ export default function questions (state = {}, action) {
       }
 
     case ANSWER_QUESTION :
-      const option = action.option === 'optionOne' ? state[action.id].optionOne : state[action.id].optionTwo
+      console.log('in question',state)
 
+      const option = action.option === 'optionOne' ? state[action.id].optionOne : state[action.id].optionTwo
       //this is kind of dumb, not sure what the best practice is...
       if (action.option === 'optionOne') {
         return {

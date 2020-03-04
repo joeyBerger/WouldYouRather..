@@ -10,6 +10,8 @@ import Nav from './Nav'
 import Login from './Login'
 import Homepage from './Homepage'
 import Poll from './Poll'
+import AnsweredPoll from './AnsweredPoll'
+
 
 
 class App extends Component {
@@ -37,6 +39,7 @@ class App extends Component {
                   <Route path ='/' exact component={Login} />
                   <Route path ='/home' component={Homepage} />
                   <Route path ='/poll/:id' component={Poll}/>
+                  <Route path ='/answeredpoll/:id' component={AnsweredPoll} />
                 </div>}
           </div>
         </Fragment>
