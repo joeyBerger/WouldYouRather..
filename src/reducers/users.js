@@ -10,14 +10,13 @@ export default function users (state = {}, action) {
         ...action.users
       }
     case ADD_ANSWERED_QUESTION :
-      console.log('getting ADD_ANSWERED_QUESTION',state);
       return {
         ...state,
         [action.user] : {
           ...state[action.user],
           answers : {
             ...state[action.user].answers,
-            [action.questionID] : 'butt'
+            [action.questionID] : action.option
           }          
         }
       }

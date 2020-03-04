@@ -13,51 +13,34 @@ export function receiveUsers (users) {
   }
 }
 
-export function addAnsweredQuestion ({user, questionID}) {  //TODO: change to userID, dont export
+export function addAnsweredQuestion ({user, questionID, option}) {  //TODO: change to userID, dont export
   return {
     type: ADD_ANSWERED_QUESTION,
     user,
-    questionID
+    questionID,
+    option
   }
 }
 
-
-
-/*
-  show loading,
-  save question/user
-  when done -> dispatch to question and answer
-*/
-
-
 export function handleAnsweredQuestion ({ authedUser,qid,answer }) {
-  console.log('handleAnsweredQuestion');
 
   return (dispatch) => {
-    // const { authedUser } = getState()
-
-    console.log('handleAnsweredQuestion 1');
-
     dispatch(showLoading())
-
     return saveQuestionAnswer({
       authedUser,
       qid,
       answer
-      // author: authedUser,
-      // replyingTo
     })
-    // .then((tweet) => {console.log('adf',tweet)})
     .then(() => dispatch(addAnsweredQuestion({
       user : authedUser,
-      questionID : qid
+      questionID : qid,
+      option : answer,
     })))
     .then(() => dispatch(answerQuestion({
       id : qid,
       option : answer,
       user : authedUser
     })))
-    // ({id, option, user})
     .then(() => dispatch(hideLoading()))
   }
 }

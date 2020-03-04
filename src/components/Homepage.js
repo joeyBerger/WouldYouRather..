@@ -20,7 +20,7 @@ class Homepage extends Component {
         }))
     }
 
-    handleViewPollButtonClick = (e,id) => {
+    handleViewPollButtonClick = (e,id) => {  //TODO: might not need this!!
         e.preventDefault();
         this.setState(() => ({
             toPoll : true
@@ -66,7 +66,13 @@ class Homepage extends Component {
                     {listItems.map(q =>   //TODO: shouldnt have to gaurd this.props!!  //TODO: probably a better way of handing off data
                         <li key = {q}> 
                              {/* {this.props.questions[q].optionOne.text}   */}
-                             <QuestionBlock questions = {this.props.questions} users = {this.props.users} id = {q} handleViewPollButtonClick = {this.handleViewPollButtonClick}/>
+                             <QuestionBlock 
+                             questions = {this.props.questions} 
+                             users = {this.props.users} 
+                             id = {q} 
+                             handleViewPollButtonClick = {this.handleViewPollButtonClick}
+                             currentTab = {this.state.currentTab}
+                             />
                         </li>
                         )}
                 </ul>

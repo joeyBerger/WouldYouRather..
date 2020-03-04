@@ -39,7 +39,7 @@ export default function questions (state = {}, action) {
       console.log('in question',state)
 
       const option = action.option === 'optionOne' ? state[action.id].optionOne : state[action.id].optionTwo
-      //this is kind of dumb, not sure what the best practice is...
+      //this is kind of dumb, not sure what the best practice is...  //TODO: follow question logic in DATA
       if (action.option === 'optionOne') {
         return {
           ...state,

@@ -32,38 +32,27 @@ class Poll extends Component {
         dispatch(handleAnsweredQuestion({
             authedUser,
             qid : id,  //TODO: change id to qid
-            answer : 'optionOne'
+            answer : this.state.selectedQuestion
         }))
         .then(() => this.setState(() => ({
             toAnsweredPoll : true
         })))
-        
-        // dispatch(answerQuestion({ 
-        //     id : id,
-        //     option : this.state.selectedQuestion,
-        //     user : authedUser,
-        //  }))
-        //  dispatch(addAnsweredQuestion({
-        //     user : authedUser,
-        //     questionID : id,
-        //  }))
     }   
 
     render() {
-
+        const { question, user, id } = this.props
         if (this.state.toAnsweredPoll) {
             return <Redirect to={{
-                pathname: `/answeredpoll/${this.props.id}`,
-                // search: '?sort=name',
-                // hash: '#the-hash',
-                state: { id: this.props.id }
+                pathname: `/answeredpoll/${id}`,
+                state: { id: id }
             }} />
         }
-
-        const { question, user } = this.props
+        
         const avatarURL = user.avatarURL
         const author = user.name
-        // console.log('user',user)
+
+        console.log(this.props);
+
         return(
             <div>
                 <h3>
@@ -104,12 +93,13 @@ class Poll extends Component {
 
 function mapStateToProps ({ authedUser, questions, users }, props) {
     const { id } = props.match.params
-    
+    // console.log('users[authedUser].answers[id]',users[authedUser].answers[id])
     return {
       id,
       authedUser : authedUser,
       question: questions[id],
-      user : users[questions[id].author]
+      user : users[questions[id].author],
+    //   answered : users[authedUser].answers[id] === undefined
     }
   }
 
