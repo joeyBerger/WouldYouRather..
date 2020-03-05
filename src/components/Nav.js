@@ -5,6 +5,9 @@ export default function Nav () {
   return (
     <nav className='nav'>
       <ul>
+      <li>
+          NAME
+        </li>
         <li>
           <NavLink to='/' exact activeClassName='active'>
             Home
@@ -12,8 +15,16 @@ export default function Nav () {
         </li>
         <li>
           <NavLink to='/new' activeClassName='active'>
-            New Tweet
+            New Question
           </NavLink>
+        </li>
+        <li>
+          <NavLink to='/home' activeClassName='active'>
+            Questions
+          </NavLink>
+        </li>
+        <li>
+          Logout
         </li>
       </ul>
     </nav>

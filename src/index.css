@@ -58,6 +58,13 @@ a {
   padding-left: 0;
 }
 
+.nav li:last-child {
+  /* padding-right: 1;   */
+  /* Why isnt this working */
+  float:right;
+}
+
+
 ul {
   padding-left: 0;
 }

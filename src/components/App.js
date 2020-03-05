@@ -9,10 +9,10 @@ import TweetPage from './TweetPage'
 import Nav from './Nav'
 import Login from './Login'
 import Homepage from './Homepage'
-import Poll from './Poll'
+import Question from './Question'
 import AnsweredPoll from './AnsweredPoll'
-
-
+import TopBar from './TopBar'
+import QuestionContainer from './QuestionContainer'
 
 class App extends Component {
   componentDidMount() {
@@ -29,6 +29,7 @@ class App extends Component {
             {this.props.authedUser === null && false //temp
               ? null
               : <Nav />
+              // : <TopBar />
             }            
             {this.props.loading === true
               ? null
@@ -38,7 +39,7 @@ class App extends Component {
                   <Route path='/new' component={NewTweet} />
                   <Route path ='/' exact component={Login} />
                   <Route path ='/home' component={Homepage} />
-                  <Route path ='/poll/:id' component={Poll}/>
+                  <Route path ='/question/:id' component={QuestionContainer}/>
                   <Route path ='/answeredpoll/:id' component={AnsweredPoll} />
                 </div>}
           </div>

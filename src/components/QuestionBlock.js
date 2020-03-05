@@ -2,11 +2,12 @@ import React, {Component} from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 const QuestionBlock = (props) => {
-    
+    //TODO: don't need current tab if answered logic figured out elsewhere!
+
     const {users, questions, id, handleViewPollButtonClick, currentTab} = props;
     const author = users[questions[id].author].name
     const avatarURL = users[questions[id].author].avatarURL
-
+    const linkURL = currentTab === "Unanswered" ? `/question/${id}` : `/answeredpoll/${id}`
     return (
         <div>
             <h2>
@@ -21,20 +22,16 @@ const QuestionBlock = (props) => {
             </h2>
             <p>
                 {questions[id].optionTwo.text}
-            </p>
-            {currentTab === "Unanswered" && (
+            </p>            
                 <Link to={{
-                    pathname: `/poll/${id}`,
+                    pathname: `/question/${id}`,
                     state: { id: id }
                 }}>
                 <p> 
-                     {/* onClick = {(e) => handleViewPollButtonClick(e,id)}> */}
                     View Poll
                 </p>
-                </Link>
-            )}
-        </div>
-        
+                </Link>            
+        </div>        
     )
 }
 

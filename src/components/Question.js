@@ -51,8 +51,6 @@ class Poll extends Component {
         const avatarURL = user.avatarURL
         const author = user.name
 
-        console.log(this.props);
-
         return(
             <div>
                 <h3>
@@ -92,14 +90,12 @@ class Poll extends Component {
 }
 
 function mapStateToProps ({ authedUser, questions, users }, props) {
-    const { id } = props.match.params
-    // console.log('users[authedUser].answers[id]',users[authedUser].answers[id])
+    const { id } = props
     return {
       id,
       authedUser : authedUser,
       question: questions[id],
       user : users[questions[id].author],
-    //   answered : users[authedUser].answers[id] === undefined
     }
   }
 
