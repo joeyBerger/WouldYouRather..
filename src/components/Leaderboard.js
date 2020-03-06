@@ -19,7 +19,7 @@ const Leaderboard = (props) => {
 
 function mapStateToProps ({ users }) {
     return {
-      users : Object.keys(users).map(user => users[user]).sort((a,b) => {
+        users : Object.keys(users).map(user => users[user]).sort((a,b) => {
             var scoreA = a.questions.length + Object.keys(a.answers).length
             var scoreB = b.questions.length + Object.keys(b.answers).length
             if (scoreA < scoreB)
@@ -27,9 +27,8 @@ function mapStateToProps ({ users }) {
             if (scoreA > scoreB)
                 return -1
             return 0
-        }
-      )
+        })
     }
-  }
+}
 
 export default connect(mapStateToProps)(Leaderboard)

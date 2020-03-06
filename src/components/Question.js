@@ -12,19 +12,20 @@ class Poll extends Component {
             selectedQuestion : '',
             toAnsweredPoll : false
         }
+    }    
+    componentWillUnmount() {
+        this._isMounted = false;
+        console.log('componentWillUnmount componentWillUnmount')
     }
-    
     onRadioClickHandler = (e) => {
         const selectedQuestion = e.target.value
         this.setState(() => ({
             selectedQuestion : selectedQuestion
         })) 
     }
-
     questionCurrentlySelected = (e) => {
         return this.state.selectedQuestion === ''
     }
-
     handleSubmitButton = (e) => {
         e.preventDefault();
         const { dispatch, id, authedUser } = this.props
@@ -34,11 +35,10 @@ class Poll extends Component {
             qid : id,  //TODO: change id to qid
             answer : this.state.selectedQuestion
         }))
-        .then(() => this.setState(() => ({
-            toAnsweredPoll : true
-        })))
+        // .then(() => this.setState(() => ({
+        //     toAnsweredPoll : true
+        // })))
     }   
-
     render() {
         const { question, user, id } = this.props
         if (this.state.toAnsweredPoll) {

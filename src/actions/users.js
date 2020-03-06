@@ -1,7 +1,6 @@
 import { showLoading, hideLoading } from 'react-redux-loading'
-import { saveLikeToggle, saveTweet, saveQuestionAnswer } from '../utils/api'
+import { saveQuestionAnswer } from '../utils/api'
 import {answerQuestion} from './questions'
-
 
 export const RECEIVE_USERS = 'RECEIVE_USERS'
 export const ADD_ANSWERED_QUESTION = 'ADD_ANSWERED_QUESTION'
@@ -21,7 +20,7 @@ export function addNewQuestion (question) {
   }
 }
 
-export function addAnsweredQuestion ({user, questionID, option}) {  //TODO: change to userID, dont export
+function addAnsweredQuestion ({user, questionID, option}) {  //TODO: change to userID, dont export
   return {
     type: ADD_ANSWERED_QUESTION,
     user,
@@ -31,7 +30,6 @@ export function addAnsweredQuestion ({user, questionID, option}) {  //TODO: chan
 }
 
 export function handleAnsweredQuestion ({ authedUser,qid,answer }) {
-
   return (dispatch) => {
     dispatch(showLoading())
     return saveQuestionAnswer({
