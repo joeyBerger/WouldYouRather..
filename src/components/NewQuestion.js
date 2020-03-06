@@ -36,10 +36,10 @@ class NewQuestion extends Component {
     }))
   }
   render() {
-    const { text, toHome, optionOneText, optionTwoText } = this.state
+    const { toHome, optionOneText, optionTwoText } = this.state
 
     if (toHome === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/home' />
     }
 
     return (

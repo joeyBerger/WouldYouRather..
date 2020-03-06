@@ -1,15 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function Nav () {
+export default function Nav (props) {
   return (
     <nav className='nav'>
       <ul>
-      <li>
-          NAME
-        </li>
         <li>
-          <NavLink to='/' exact activeClassName='active'>
+          <NavLink to='/home' activeClassName='active'>
             Home
           </NavLink>
         </li>
@@ -19,12 +16,17 @@ export default function Nav () {
           </NavLink>
         </li>
         <li>
-          <NavLink to='/home' activeClassName='active'>
-            Questions
+          <NavLink to='/leaderboard' activeClassName='active'>
+            Leader Board
           </NavLink>
         </li>
         <li>
-          Logout
+          Hello, {props.userName}
+        </li>
+        <li>
+        <NavLink to='/login' activeClassName='active'>
+            Logout
+        </NavLink>
         </li>
       </ul>
     </nav>

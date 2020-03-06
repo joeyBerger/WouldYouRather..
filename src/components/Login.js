@@ -13,14 +13,12 @@ class Login extends Component {
             loginName: '',
             toHome: false
         };   
-      }
-
+    }
     onDropDownSelect = (e) => {
         this.setState(() => ({
             loginName : e.value
         }))
     }
-
     handleLoginButton = (e) => {
         e.preventDefault();
         if (this.state.loginName === '') return;
@@ -30,13 +28,11 @@ class Login extends Component {
             toHome : true
         }))
     }
-
     render() {
 
         if (this.state.toHome === true) {
           return <Redirect to='/home' />
         }
-
 
         let options =  Object.keys(this.props.users).map(key => 
             ({value: this.props.users[key].id, label: this.props.users[key].name})
@@ -57,27 +53,10 @@ class Login extends Component {
                 <button onClick = {this.handleLoginButton}>
                     LOGIN
                 </button>
-                {/* <ul>
-                    {Object.keys(this.props.users).map(key => 
-                        <li key = {this.props.users[key].id}> {this.props.users[key].name}</li>
-                    )}
-                </ul>                 */}
             </div>
         )
     }
 }
-
-// function compare(a, b) {
-//     console.log('compare',a)
-//     var splitA = a.split(" ");
-//     var splitB = b.split(" ");
-//     var lastA = splitA[splitA.length - 1];
-//     var lastB = splitB[splitB.length - 1];
-//     // console.log(lastA,lastB);
-//     if (lastA < lastB) return -1;
-//     if (lastA > lastB) return 1;
-//     return 0;
-// }
 
 function mapStateToProps ({ users }) {
     return {
