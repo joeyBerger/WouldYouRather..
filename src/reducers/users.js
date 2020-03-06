@@ -3,6 +3,8 @@ import { RECEIVE_QUESTIONS, ADD_QUESTION, ANSWER_QUESTION } from '../actions/que
 
 
 export default function users (state = {}, action) {
+
+  console.log('user',action)
   switch(action.type) {
     case RECEIVE_USERS :
       return {
@@ -20,6 +22,14 @@ export default function users (state = {}, action) {
           }          
         }
       }
+      case 'ADD_NEW_QUESTION' :
+        return {
+          ...state,
+          [action.question.author]: {
+            ...state[action.question.author],
+            questions: state[action.question.author].questions.concat([action.question.id])
+          }
+        }
     default :
       return state
   }

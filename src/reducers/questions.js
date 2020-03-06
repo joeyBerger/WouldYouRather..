@@ -32,7 +32,7 @@ export default function questions (state = {}, action) {
     // }
       return {
         ...state,
-        [action.question.id]: action.question,
+        [action.question.id]: action.question,        
       }
 
     case ANSWER_QUESTION :

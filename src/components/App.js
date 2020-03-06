@@ -12,6 +12,7 @@ import Homepage from './Homepage'
 import Question from './Question'
 import AnsweredPoll from './AnsweredPoll'
 import TopBar from './TopBar'
+import NewQuestion from './NewQuestion'
 import QuestionContainer from './QuestionContainer'
 
 class App extends Component {
@@ -36,11 +37,13 @@ class App extends Component {
               : <div>
                   {/* <Route path='/' exact component={Dashboard} /> */}
                   {/* <Route path='/tweet/:id' component={TweetPage} /> */}
-                  <Route path='/new' component={NewTweet} />
+                  {/* <Route path='/new' component={NewTweet} /> */}
                   <Route path ='/' exact component={Login} />
                   <Route path ='/home' component={Homepage} />
                   <Route path ='/question/:id' component={QuestionContainer}/>
                   <Route path ='/answeredpoll/:id' component={AnsweredPoll} />
+                  <Route path ='/new' component={NewQuestion} />
+                  
                 </div>}
           </div>
         </Fragment>

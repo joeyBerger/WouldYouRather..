@@ -5,11 +5,19 @@ import {answerQuestion} from './questions'
 
 export const RECEIVE_USERS = 'RECEIVE_USERS'
 export const ADD_ANSWERED_QUESTION = 'ADD_ANSWERED_QUESTION'
+export const ADD_NEW_QUESTION = 'ADD_NEW_QUESTION'
 
 export function receiveUsers (users) {
   return {
     type: RECEIVE_USERS,
     users,
+  }
+}
+
+export function addNewQuestion (question) {
+  return {
+    type: ADD_NEW_QUESTION,
+    question
   }
 }
 
