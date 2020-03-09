@@ -28,7 +28,20 @@ class App extends Component {
               ? null
               : <Nav userName = { users[authedUser].name }/>
               // : <TopBar />
-            }            
+            }
+
+            <span>
+              <nav>
+                <ul className="main-nav">
+                    <li class = "navItemActive"> About</li>
+                    <li class = "navItemActive"> About</li>
+                    <li class = "navItemActive"> About</li>
+                    <li className="pushLeftRight"><a href="">Contact</a></li>
+                    <li className="pushRight"><a href="">Contact</a></li>
+                </ul>  
+              </nav>
+            </span>
+
             {this.props.loading === true
               ? null
               : <div>
@@ -43,12 +56,15 @@ class App extends Component {
 
 
 
+              
 
-                {/* <span class="grid-container-question">
-                    <span class="name-entry">John Edo asks</span>
 
-                    <span class="nameHeader">Would you rather:</span>
-                    <img src='https://randomuser.me/api/portraits/men/35.jpg' class="avatarImg"/>
+
+                {/* <span className="grid-container-question">
+                    <span className="name-entry">John Edo asks</span>
+
+                    <span className="nameHeader">Would you rather:</span>
+                    <img src='https://randomuser.me/api/portraits/men/35.jpg' className="avatarImg"/>
 
                     <div className="optionOneSelect">
                         <label >
@@ -59,7 +75,7 @@ class App extends Component {
                         </label>
                     </div>
 
-                    <span class="orBreak">OR</span>
+                    <span className="orBreak">OR</span>
                     <div className="optionTwoSelect">
                         <label >
                             <input  type="radio" value="optionOne" checked={true === false}/>

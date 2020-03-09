@@ -31,6 +31,7 @@ a {
   font-size: 16px;
   width: 250px;
   position: relative;
+  background-color: lightgreen;
 }
 
 .btn:hover {
@@ -77,14 +78,15 @@ a {
 }
 
 
-.nameHeader { grid-area: header; 
+.nameHeader { 
+  grid-area: header; 
   font-weight: bold;
   text-decoration: underline;
   font-size: 35px;
   text-align: center;
   background-color:lightgoldenrodyellow;
-
 }
+
 .avatarImg { 
     grid-area: menu; 
     max-width: 100%;
@@ -94,9 +96,9 @@ a {
     /* background-position: center; */
     border-radius: 50%;
     background-color:lightgoldenrodyellow;
-
     /* padding-left: 27; */
 }
+
 .item3 { grid-area: main; }
 
 .orBreak { 
@@ -171,9 +173,7 @@ a {
 
 .temp-padding {
   padding-left: 50px;
-  background-color:lightgoldenrodyellow;
-
-  
+  background-color:lightgoldenrodyellow;  
 }
 
 .name-entry {
@@ -220,7 +220,7 @@ a {
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   /* text-align: center; */
-  line-height: 50%;;
+  line-height: 50%;
   padding: 20px 0;
   /* font-size: 20px; */
 }
@@ -230,12 +230,16 @@ a {
   grid-area: Answered; 
   text-align: center;
   font-size: 25px;
+  padding: 10px;
+  color: lightgrey;
 }
 
 .unansweredTab { 
   grid-area: Unanswered; 
   text-align: center;
   font-size: 25px;
+  padding: 10px;
+  color: lightgrey;
 }
 
 .answeredTabActive { 
@@ -243,6 +247,9 @@ a {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
+  background-color: lightgreen;
+  padding: 10px;
+  color: blue;
 }
 
 .unansweredTabActive { 
@@ -250,6 +257,9 @@ a {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
+  background-color: lightgreen;
+  padding: 10px;
+  color: blue;
 }
 
 
@@ -261,7 +271,7 @@ a {
     'menu footer footer footer footer footer'; */
   grid-gap: 10px;
   background-color: #2196F3;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .top-grid-container > div {
@@ -269,6 +279,40 @@ a {
   text-align: center;
   padding: 20px 0;
   font-size: 25px;
+}
+
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  background-color: lightpink;
+
+}
+
+.navItem {
+  padding-right: 20px;
+}
+
+.navItemActive {
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.pushRight {
+  margin-left: auto;
+  padding-right: 50px;
+}
+
+.pushLeftRight {
+  margin-left: auto;
+  /* padding-right: 10; */
 }
 
 
@@ -281,23 +325,80 @@ a {
 } */
 
 
+.question-form {
+  resize: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.composeHeader {
+  font-size: 25px;
+  padding: 20px;
+  color:#252525;
+}
 
 
 
 
+.questionsAnsweredGrid {
+  grid-area: right; 
+  background-color: lightgoldenrodyellow;
+}
+
+.questionsCreatedGrid {
+  grid-area: created; 
+  background-color: lightgoldenrodyellow;
+}
+
+.score {
+  grid-area: score; 
+  background-color: lightgoldenrodyellow;
+}
+
+.leaderboard-grid-container {
+  display: grid;
+  grid-template-columns: auto 50px 10% 2fr 1fr;
+  /* grid-template-rows: 50px 20px; */
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu menu right right right'
+    'menu menu menu created created created'
+    'menu menu menu score score score';
+    /* 'menu menu menu right right right'
+    'menu menu menu right right right'; */
+    /* 'menu menu menu footer footer footer'
+    'menu menu menu Unanswered Unanswered Unanswered'
+    'menu menu menu Answered Answered Answered'; */
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 50px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.leaderboard-grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0px;
+  font-size: 25px;
+}
 
 
 
 
+.login {
+  text-align: center;
+  font-size: 25px;
+  margin: 30px;
+}
 
-
-
-
-
-
-
-
-
+.login-header {
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
 
 
 
