@@ -6,14 +6,14 @@ const QuestionBlock = (props) => {
     const author = users[questions[id].author].name
     const avatarURL = users[questions[id].author].avatarURL
     return (
-        <div class="grid-padding">
-            <span class="grid-container">
-                <span class="nameHeader">{author} asks:</span>
-                <img src={avatarURL} class="avatarImg"/>
-                <span class="optionOne">{questions[id].optionOne.text}</span>
-                <span class="orBreak">OR</span>
-                <span class="optionTwo">{questions[id].optionTwo.text}</span>
-                <span class="submit">
+        <div className="grid-padding">
+            <span className="grid-container">
+                <span className="nameHeader">{author} asks:</span>
+                <img src={avatarURL} className="avatarImg"/>
+                <span className="optionOne">{questions[id].optionOne.text}</span>
+                <span className="orBreak">OR</span>
+                <span className="optionTwo">{questions[id].optionTwo.text}</span>
+                <span className="submit">
                 <Link to={{
                 pathname: `/question/${id}`,
                 state: { id: id }
