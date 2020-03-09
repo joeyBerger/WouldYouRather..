@@ -1,16 +1,32 @@
-import React, {Component} from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const QuestionBlock = (props) => {
-    //TODO: don't need current tab if answered logic figured out elsewhere!
-
-    const {users, questions, id, handleViewPollButtonClick, currentTab} = props;
+    const {users, questions, id } = props;
     const author = users[questions[id].author].name
     const avatarURL = users[questions[id].author].avatarURL
-    const linkURL = currentTab === "Unanswered" ? `/question/${id}` : `/answeredpoll/${id}`
     return (
-        <div>
-            <h2>
+        <div class="grid-padding">
+            <span class="grid-container">
+                <span class="nameHeader">{author} asks:</span>
+                <img src={avatarURL} class="avatarImg"/>
+                <span class="optionOne">{questions[id].optionOne.text}</span>
+                <span class="orBreak">OR</span>
+                <span class="optionTwo">{questions[id].optionTwo.text}</span>
+                <span class="submit">
+                <Link to={{
+                pathname: `/question/${id}`,
+                state: { id: id }
+                }}>
+                <p> 
+                    View Poll
+                </p>
+                </Link> 
+                </span> 
+            </span>
+
+
+            {/* <h2>
                 {author} asks:            
             </h2>            
             <img src={avatarURL} alt={author}></img>
@@ -30,7 +46,7 @@ const QuestionBlock = (props) => {
                 <p> 
                     View Poll
                 </p>
-                </Link>            
+                </Link>             */}
         </div>        
     )
 }

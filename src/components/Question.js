@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { answerQuestion } from '../actions/questions'
-import { addAnsweredQuestio, handleAnsweredQuestion } from '../actions/users'
+import { handleAnsweredQuestion } from '../actions/users'
 import { Redirect } from 'react-router-dom'
 
 class Poll extends Component {
@@ -53,7 +52,33 @@ class Poll extends Component {
 
         return(
             <div>
-                <h3>
+                <span class="grid-container-question">
+                    <span class="name-entry">{author} asks</span>
+                    <span class="nameHeader">Would you rather:</span>
+                    <img class="avatarImg" src={avatarURL} alt={author}/>
+                    <div className="optionOneSelect">
+                        <label >
+                            <input  type="radio" value="optionOne" checked={this.state.selectedQuestion === 'optionOne'} onChange = {this.onRadioClickHandler}/>
+                            <span className = "temp-padding">
+                            {question.optionOne.text}
+                            </span>
+                        </label>
+                    </div>
+                    <span class="orBreak">OR</span>
+                    <div className="optionTwoSelect">
+                        <label >
+                            <input  type="radio" value="optionTwo" checked={this.state.selectedQuestion === 'optionTwo'} onChange = {this.onRadioClickHandler}/>
+                            <span className = "temp-padding">
+                            {question.optionTwo.text}
+                            </span>
+                        </label>
+                    </div>
+                    <button className="submitButton" disabled = {this.questionCurrentlySelected()} onClick = {this.handleSubmitButton}> 
+                        Submit
+                    </button>
+                </span>
+
+                {/* <h3>
                 {author} asks:            
                 </h3>
 
@@ -83,7 +108,7 @@ class Poll extends Component {
                     <button disabled = {this.questionCurrentlySelected()} onClick = {this.handleSubmitButton}>
                         Submit
                     </button>
-                </div>
+                </div> */}
             </div>
         )
     }

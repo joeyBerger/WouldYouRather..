@@ -19,35 +19,28 @@ class Homepage extends Component {
             currentTab : type
         }))
     }
-
-    handleViewPollButtonClick = (e,id) => {  //TODO: might not need this!!
+    handleViewPollButtonClick = (e) => {
         e.preventDefault();
         this.setState(() => ({
             toPoll : true
         }))
     }
-
     render() {
-        let listItems = [];
-    
-        //TODO: sort by timestamps??
+        let listItems = [];    
+        const {questions, users, authedUser} = this.props;
 
+        //get answered questions from authenticated user
+        let answeredQuestions = Object.keys(users[authedUser].answers).sort((a,b) => {users[authedUser].answers});
 
-        if (this.props.questions && this.props.users && this.props.authedUser) {      //TODO: shouldnt have to gaurd
-            const {questions, users, authedUser} = this.props;
+        //filter questions by active tab and sort by timestamp
+        listItems = Object.keys(questions) 
+        .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
+        .filter(q => answeredQuestions.includes(q) === (this.state.currentTab === "Answered"))
 
-            //get answered questions from authenticated user
-            let answeredQuestions = Object.keys(users[authedUser].answers).sort((a,b) => {users[authedUser].answers});
-
-            //filter questions by active tab and sort by timestamp
-            listItems = Object.keys(questions) 
-            .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
-            .filter(q => answeredQuestions.includes(q) === (this.state.currentTab === "Answered"))
-
-            if (this.state.toPoll === true) {
-                return <Redirect to='/poll' questions={questions}/>
-              }
+        if (this.state.toPoll === true) {
+            return <Redirect to='/poll' questions={questions}/>
         }
+        
         return(
             <div>
                 <ul>
@@ -63,15 +56,13 @@ class Homepage extends Component {
                     </li>
                 </ul>
                 <ul>
-                    {listItems.map(q =>   //TODO: shouldnt have to gaurd this.props!!  //TODO: probably a better way of handing off data
+                    {listItems.map(q =>
                         <li key = {q}> 
-                             {/* {this.props.questions[q].optionOne.text}   */}
                              <QuestionBlock 
                              questions = {this.props.questions} 
                              users = {this.props.users} 
                              id = {q} 
                              handleViewPollButtonClick = {this.handleViewPollButtonClick}
-                             currentTab = {this.state.currentTab}
                              />
                         </li>
                         )}

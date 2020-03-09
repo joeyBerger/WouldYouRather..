@@ -1,8 +1,12 @@
+* { margin:0; padding:0; }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: archivo sans-serif;
   color: #252525;
+  background-color: lightcoral;
+
 }
 
 a {
@@ -14,6 +18,7 @@ a {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
+  background-color: lightblue;
 }
 
 .btn {
@@ -63,6 +68,212 @@ a {
   /* Why isnt this working */
   float:right;
 }
+
+
+
+
+.grid-padding {
+  padding: 10px 50px 0px 50px;
+}
+
+
+.nameHeader { grid-area: header; 
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 35px;
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+
+}
+.avatarImg { 
+    grid-area: menu; 
+    max-width: 100%;
+    max-height: 100%;
+    /* height: 100%; */
+    /* background-size: cover; */
+    /* background-position: center; */
+    border-radius: 50%;
+    background-color:lightgoldenrodyellow;
+
+    /* padding-left: 27; */
+}
+.item3 { grid-area: main; }
+
+.orBreak { 
+    grid-area: footer;
+    font-size: 20px;
+    text-align: center;
+    background-color:lightgoldenrodyellow;
+    font-style: italic;
+
+
+}
+.buttonItem {
+    grid-area: button;
+}   
+
+.submit { 
+  grid-area: Answered; 
+  text-align: center;
+  background-color:lightgreen;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.optionOne { 
+  grid-area: right; 
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+
+}
+
+.optionTwo { 
+  grid-area: Unanswered;
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+
+}
+
+.item8 { grid-area: Butt; }
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 50px 10% 2fr 1fr;
+  /* grid-template-rows: 50px 20px; */
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu menu right right right'
+    'menu menu menu footer footer footer'
+    'menu menu menu Unanswered Unanswered Unanswered'
+    'menu menu menu Answered Answered Answered';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 50px;
+  font-size: 25px;
+  text-align: center;
+}
+
+
+
+.optionOneSelect { 
+  grid-area: right; 
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+
+}
+
+.optionTwoSelect { 
+  grid-area: Unanswered;
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+}
+
+.temp-padding {
+  padding-left: 50px;
+  background-color:lightgoldenrodyellow;
+
+  
+}
+
+.name-entry {
+  grid-area: Name;
+  font-size: 25px;
+  font-weight: bold;
+  background-color:lightgoldenrodyellow;
+}
+
+/* .submitButton {
+  font-size: 25px;
+  font-weight: bold;
+  border: 0;
+} */
+
+.submitButton { 
+  grid-area: Answered; 
+  text-align: center;
+  background-color:lightblue;
+  /* padding-left: 50px;
+  padding-right: 50px; */
+  font-size: 25px;
+  /* font-weight: bold; */
+  border: 0;
+}
+
+.grid-container-question {
+  display: grid;
+  grid-template-columns: auto 50px 10% 2fr 1fr;
+  /* grid-template-rows: 50px 20px; */
+  grid-template-areas:
+    'Name Name Name header header header'
+    'menu menu menu right right right'
+    'menu menu menu footer footer footer'
+    'menu menu menu Unanswered Unanswered Unanswered'
+    'menu menu menu Answered Answered Answered';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 50px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* text-align: center; */
+  line-height: 50%;;
+  padding: 20px 0;
+  /* font-size: 20px; */
+}
+
+
+
+
+
+/* form {
+	max-width: 250px;
+	position: relative;
+	margin: 0px auto 0;
+	font-size: 15px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ul {
