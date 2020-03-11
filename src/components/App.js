@@ -31,7 +31,7 @@ class App extends Component {
               // : <TopBar />
             }
 
-            <span>
+            {/* <span>
               <nav>
                 <ul className="main-nav">
                     <li class = "navItemActive"> About</li>
@@ -41,7 +41,7 @@ class App extends Component {
                     <li className="pushRight"><a href="">Contact</a></li>
                 </ul>  
               </nav>
-            </span>
+            </span> */}
 
             {this.props.loading === true
               ? null

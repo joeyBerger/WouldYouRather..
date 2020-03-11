@@ -21,11 +21,11 @@ export default function Nav (props) {
           Leader Board
         </NavLink>
       </li>
-      <li>
+      <li className = 'navItemName'>
         Hello, {props.userName}
       </li>
       <li>
-      <NavLink to='/logout' className='pushRight' activeClassName='navItemActive'>
+      <NavLink to='/logout' className='navItemLogout'>
           Logout
       </NavLink>
       </li>

@@ -9,9 +9,23 @@ const AnsweredPoll = (props) => {
     const optionTwoVotes = question["optionTwo"].votes.length
     const totalVotes = question['optionOne'].votes.length + question['optionTwo'].votes.length
     const optionOnePercent = Math.round(optionOneVotes/totalVotes * 100)/100;
-    const youPickedStr = '(you picked)'
-    const optionOnePicked = userChoice === 'optionOne' ? youPickedStr : ''
-    const optionTwoPicked = userChoice === 'optionTwo' ? youPickedStr : ''
+    const youPickedStr = '(you picked)', classChosenStr = 'Chosen'
+
+
+
+
+    // const optionOnePicked = userChoice === 'optionOne' ? youPickedStr : ''
+    // const optionTwoPicked = userChoice === 'optionTwo' ? youPickedStr : ''
+
+    let optionOnePicked, optionTwoPicked, result1ClassName = 'resultNumb1', result2ClassName = 'resultNumb2'
+    if (userChoice === 'optionOne') {
+        optionOnePicked = youPickedStr
+        result1ClassName += classChosenStr
+    } else {
+        optionTwoPicked = youPickedStr
+        result2ClassName += classChosenStr
+    }
+
 
     return(
         <div>
@@ -55,10 +69,10 @@ const AnsweredPoll = (props) => {
                   <img className="avatarImg" src={avatarURL} alt={name}/>
                   <span className="results">Results:</span>
                   <span className="optionOne">{question.optionOne.text}</span>
-                  <span className="resultNumb1">{optionOnePercent * 100 + '%'} - {' '}   
+                  <span className={result1ClassName}>{optionOnePercent * 100 + '%'} - {' '}   
                 {`${optionOneVotes} out of ${totalVotes} votes`} {optionOnePicked}</span>
                   <span className="optionTwo">{question.optionTwo.text}</span>
-                  <span className="resultNumb2">{(1-optionOnePercent) * 100 + '%'} - {' '}  
+                  <span className={result2ClassName}>{(1-optionOnePercent) * 100 + '%'} - {' '}  
                   {`${optionTwoVotes} out of ${totalVotes} votes`} {optionTwoPicked}</span>
                   {/* <div className="overlay_image"></div> */}
                 </span>
