@@ -1,6 +1,4 @@
 import { RECEIVE_USERS, ADD_ANSWERED_QUESTION } from '../actions/users'
-import { RECEIVE_QUESTIONS, ADD_QUESTION, ANSWER_QUESTION } from '../actions/questions'
-
 
 export default function users (state = {}, action) {
 

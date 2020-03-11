@@ -1,9 +1,9 @@
-import {
-  _getUsers,
-  _getTweets,
-  _saveLikeToggle,
-  _saveTweet,
-} from './_DATA.js'
+// import {
+//   _getUsers,
+//   _getTweets,
+//   _saveLikeToggle,
+//   _saveTweet,
+// } from './_DATA.js'
 
 import {
   _saveQuestion,
@@ -40,13 +40,13 @@ export function getInitialData () {
   }))
 }
 
-export function saveLikeToggle (info) {
-  return _saveLikeToggle(info)
-}
+// export function saveLikeToggle (info) {
+//   return _saveLikeToggle(info)
+// }
 
-export function saveTweet (info) {
-  return _saveTweet(info)
-}
+// export function saveTweet (info) {
+//   return _saveTweet(info)
+// }
 
 export function saveQuestion(question) {
   return _saveQuestion(question)
