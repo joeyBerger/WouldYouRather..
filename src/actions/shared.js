@@ -5,7 +5,7 @@ import { receiveQuestions } from '../actions/questions'
 import { setAuthedUser } from '../actions/authedUser'  //TODO: temp
 import { showLoading, hideLoading } from 'react-redux-loading'
 
-const AUTHED_ID = 'tylermcginnis'  //TODO: temp
+// const AUTHED_ID = 'tylermcginnis'  //TODO: temp
 
 export function handleInitialData () {
   return (dispatch) => {
@@ -15,7 +15,7 @@ export function handleInitialData () {
         dispatch(receiveUsers(users))
         // dispatch(receiveTweets(tweets))
         dispatch(receiveQuestions(questions))
-        dispatch(setAuthedUser(AUTHED_ID))  //TODO: temp
+        // dispatch(setAuthedUser(AUTHED_ID))  //TODO: temp
         dispatch(hideLoading())
       })
   }

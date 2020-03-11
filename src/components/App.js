@@ -32,7 +32,8 @@ class App extends Component {
             {this.props.loading === true
               ? null
               : <div>
-                  <Route path ='/login' component={Login} />
+                  {/* <Route path ='/login' component={Login} />   //path={["/home", "/users", "/widgets"]} */}
+                  <Route path ={["/login", "/"]} exact component={Login} />
                   <Route path ='/logout' component={Logout} />
                   <Route path ='/home' component={Homepage} />
                   <Route path ='/question/:id' component={QuestionContainer}/>

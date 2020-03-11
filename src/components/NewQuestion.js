@@ -45,7 +45,7 @@ class NewQuestion extends Component {
     return (
         <div className='center'>
         <h3 className="composeHeader">Compose New Question</h3>
-        <form className='new-tweet' onSubmit={this.handleSubmit}>
+        <form className='new-question' onSubmit={this.handleSubmit}>
           <textarea className = 'question-form'
             placeholder="Questions one..."
             value={optionOneText}
@@ -53,7 +53,7 @@ class NewQuestion extends Component {
           />
           </form>
           <p>Or...</p>
-          <form className='new-tweet' onSubmit={this.handleSubmit}>
+          <form className='new-question' onSubmit={this.handleSubmit}>
           <textarea className = 'question-form'
             placeholder="Questions two..."
             value={optionTwoText}

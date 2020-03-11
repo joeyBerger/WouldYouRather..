@@ -48,7 +48,7 @@ class Login extends Component {
 
         return(
             <div className="login">
-                <p className='login-header'>Login</p>
+                <p className='login-header'>Would You Rather...</p>
                 <Dropdown className = "login-dropdown" options={options} onChange={this.onDropDownSelect} value={this.state.loginName} placeholder="Select user name" />
                 <button className='btn' onClick = {this.handleLoginButton}>
                     LOGIN

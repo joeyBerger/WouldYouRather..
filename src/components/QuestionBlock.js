@@ -24,29 +24,6 @@ const QuestionBlock = (props) => {
                 </Link> 
                 </span> 
             </span>
-
-
-            {/* <h2>
-                {author} asks:            
-            </h2>            
-            <img src={avatarURL} alt={author}></img>
-            <p>
-                {questions[id].optionOne.text}
-            </p>
-            <h2>
-                Or
-            </h2>
-            <p>
-                {questions[id].optionTwo.text}
-            </p>            
-                <Link to={{
-                    pathname: `/question/${id}`,
-                    state: { id: id }
-                }}>
-                <p> 
-                    View Poll
-                </p>
-                </Link>             */}
         </div>        
     )
 }

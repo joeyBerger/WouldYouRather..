@@ -40,24 +40,11 @@ class Homepage extends Component {
         if (this.state.toPoll === true) {
             return <Redirect to='/poll' questions={questions}/>
         }
-
-        // const activeTemp = 'answeredTabActive';
+        
         const activeTemp = this.state.currentTab === 'Unanswered' ? 'unansweredTabActive' : 'unansweredTab'
         
         return(
             <div>
-                {/* <ul>
-                    <li>
-                    <span activeClassName='active' onClick = {(e) => {this.handleTabButtonClick(e,"Unanswered")}}>
-                        Unanswered Questions
-                    </span>
-                    </li>
-                    <li>
-                    <span activeClassName='active' onClick = {(e) => {this.handleTabButtonClick(e,"Answered")}}>
-                        Answered Questions
-                    </span>          
-                    </li>
-                </ul> */}
                 <div className="grid-padding">                
                     <span className="top-grid-container"> 
                         <p className={this.state.currentTab === 'Unanswered' ? 'unansweredTabActive' : 'unansweredTab'}
@@ -66,9 +53,6 @@ class Homepage extends Component {
                         onClick = {(e) => {this.handleTabButtonClick(e,"Answered")}}>Answered</p>
                     </span>
                 </div>
-
-                {/* + this.state.currentTab === 'Unanswered' ? 'Active' : 'Active' */}
-
                 <ul>
                     {listItems.map(q =>
                         <li key = {q}> 
