@@ -34,12 +34,11 @@ class Poll extends Component {
             qid : id,  //TODO: change id to qid
             answer : this.state.selectedQuestion
         }))
-        // .then(() => this.setState(() => ({
-        //     toAnsweredPoll : true
-        // })))
     }   
     render() {
+
         const { question, user, id } = this.props
+
         if (this.state.toAnsweredPoll) {
             return <Redirect to={{
                 pathname: `/answeredpoll/${id}`,
@@ -52,10 +51,10 @@ class Poll extends Component {
 
         return(
             <div>
-                <span class="grid-container-question">
-                    <span class="name-entry">{author} asks</span>
-                    <span class="nameHeader">Would you rather:</span>
-                    <img class="avatarImg" src={avatarURL} alt={author}/>
+                <span className="grid-container-question">
+                    <span className="name-entry">{author} asks</span>
+                    <span className="nameHeader">Would you rather:</span>
+                    <img className="avatarImg" src={avatarURL} alt={author}/>
                     <div className="optionOneSelect">
                         <label >
                             <input  type="radio" value="optionOne" checked={this.state.selectedQuestion === 'optionOne'} onChange = {this.onRadioClickHandler}/>
@@ -64,7 +63,7 @@ class Poll extends Component {
                             </span>
                         </label>
                     </div>
-                    <span class="orBreak">OR</span>
+                    <span className="orBreak">OR</span>
                     <div className="optionTwoSelect">
                         <label >
                             <input  type="radio" value="optionTwo" checked={this.state.selectedQuestion === 'optionTwo'} onChange = {this.onRadioClickHandler}/>
@@ -77,38 +76,6 @@ class Poll extends Component {
                         Submit
                     </button>
                 </span>
-
-                {/* <h3>
-                {author} asks:            
-                </h3>
-
-                <h2>
-                Would you rather...         
-                </h2>
-                
-                <img src={avatarURL} alt={author}></img>
-
-                <div>
-                    <label>
-                        <input type="radio" value="optionOne" checked={this.state.selectedQuestion === 'optionOne'} onChange = {this.onRadioClickHandler}/>
-                        {question.optionOne.text}
-                    </label>
-                </div>
-                <h3>
-                or...           
-                </h3>
-                <div>
-                    <label>
-                        <input type="radio" value="optionTwo" checked={this.state.selectedQuestion === 'optionTwo'} onChange = {this.onRadioClickHandler}/>
-                        {question.optionTwo.text}
-                    </label>
-                </div>
-
-                <div>
-                    <button disabled = {this.questionCurrentlySelected()} onClick = {this.handleSubmitButton}>
-                        Submit
-                    </button>
-                </div> */}
             </div>
         )
     }

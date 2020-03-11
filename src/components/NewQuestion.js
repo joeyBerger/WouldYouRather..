@@ -43,25 +43,22 @@ class NewQuestion extends Component {
     }
 
     return (
-      <div className='center'>
+        <div className='center'>
         <h3 className="composeHeader">Compose New Question</h3>
         <form className='new-tweet' onSubmit={this.handleSubmit}>
           <textarea className = 'question-form'
-            // placeholder="What's happening?"
+            placeholder="Questions one..."
             value={optionOneText}
             onChange={(e) => {this.handleChange(e,"optionOneText")}}
-            // className='textarea'
-            // maxLength={100}
           />
+          </form>
           <p>Or...</p>
           <form className='new-tweet' onSubmit={this.handleSubmit}>
           <textarea className = 'question-form'
+            placeholder="Questions two..."
             value={optionTwoText}
             onChange={(e) => {this.handleChange(e,"optionTwoText")}}
-            // className='textarea'
-            // maxLength={100}
           />
-          </form>
           <button
             className='btn'
             type='submit'

@@ -64,13 +64,10 @@ a {
 }
 
 .nav li:last-child {
-  /* padding-right: 1;   */
+  /* padding-subheader: 1;   */
   /* Why isnt this working */
-  float:right;
+  float:subheader;
 }
-
-
-
 
 .grid-padding {
   padding: 10px 50px 0px 50px;
@@ -87,7 +84,7 @@ a {
 }
 
 .avatarImg { 
-    grid-area: menu; 
+    grid-area: image; 
     max-width: 100%;
     max-height: 100%;
     /* height: 100%; */
@@ -101,53 +98,62 @@ a {
 .item3 { grid-area: main; }
 
 .orBreak { 
-    grid-area: footer;
+    grid-area: orBreak;
     font-size: 20px;
     text-align: center;
     background-color:lightgoldenrodyellow;
     font-style: italic;
-
-
 }
+
 .buttonItem {
     grid-area: button;
 }   
 
 .submit { 
-  grid-area: Answered; 
+  grid-area: submit; 
   text-align: center;
   background-color:lightgreen;
-  padding-left: 50px;
-  padding-right: 50px;
 }
 
 .optionOne { 
-  grid-area: right; 
+  grid-area: optionOne; 
   text-align: center;
   background-color:lightgoldenrodyellow;
+
+}
+
+.optionOneChosen { 
+  grid-area: optionOne; 
+  text-align: center;
+  font-weight: bold;
+  background-color:lightgreen;
 
 }
 
 .optionTwo { 
-  grid-area: Unanswered;
+  grid-area: optionTwo;
   text-align: center;
   background-color:lightgoldenrodyellow;
+}
 
+.optionTwoChosen { 
+  grid-area: optionTwo;
+  text-align: center;
+  font-weight: bold;
+  background-color:lightgreen;
 }
 
 .item8 { grid-area: Butt; }
 
-
 .grid-container {
   display: grid;
   grid-template-columns: auto 50px 10% 2fr 1fr;
-  /* grid-template-rows: 50px 20px; */
   grid-template-areas:
     'header header header header header header'
-    'menu menu menu right right right'
-    'menu menu menu footer footer footer'
-    'menu menu menu Unanswered Unanswered Unanswered'
-    'menu menu menu Answered Answered Answered';
+    'image image image optionOne optionOne optionOne'
+    'image image image orBreak orBreak orBreak'
+    'image image image optionTwo optionTwo optionTwo'
+    'image image image submit submit submit';
   grid-gap: 10px;
   background-color: #2196F3;
   padding: 50px;
@@ -155,17 +161,15 @@ a {
   text-align: center;
 }
 
-
-
 .optionOneSelect { 
-  grid-area: right; 
+  grid-area: optionOneSelect; 
   text-align: center;
   background-color:lightgoldenrodyellow;
 
 }
 
 .optionTwoSelect { 
-  grid-area: Unanswered;
+  grid-area: optionTwoSelect;
   text-align: center;
   background-color:lightgoldenrodyellow;
 }
@@ -177,38 +181,29 @@ a {
 
 .name-entry {
   grid-area: Name;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   background-color:lightgoldenrodyellow;
+  line-height: 35px;
 }
 
-/* .submitButton {
-  font-size: 25px;
-  font-weight: bold;
-  border: 0;
-} */
-
 .submitButton { 
-  grid-area: Answered; 
+  grid-area: submit; 
   text-align: center;
-  background-color:lightblue;
-  /* padding-left: 50px;
-  padding-right: 50px; */
+  background-color:lightgreen;
   font-size: 25px;
-  /* font-weight: bold; */
   border: 0;
 }
 
 .grid-container-question {
   display: grid;
   grid-template-columns: auto 50px 10% 2fr 1fr;
-  /* grid-template-rows: 50px 20px; */
   grid-template-areas:
     'Name Name Name header header header'
-    'menu menu menu right right right'
-    'menu menu menu footer footer footer'
-    'menu menu menu Unanswered Unanswered Unanswered'
-    'menu menu menu Answered Answered Answered';
+    'image image image optionOneSelect optionOneSelect optionOneSelect'
+    'image image image orBreak orBreak orBreak'
+    'image image image optionTwoSelect optionTwoSelect optionTwoSelect'
+    'image image image submit submit submit';
   grid-gap: 10px;
   background-color: #2196F3;
   padding: 50px;
@@ -218,12 +213,9 @@ a {
 
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
-  /* text-align: center; */
   line-height: 50%;
   padding: 20px 0;
-  /* font-size: 20px; */
 }
-
 
 .answeredTab { 
   grid-area: Answered; 
@@ -261,16 +253,12 @@ a {
   color: blue;
 }
 
-
 .top-grid-container {
   display: grid;
   grid-template-areas:
     'Unanswered Unanswered Answered Answered';
-    /* 'menu main main main right right'
-    'menu footer footer footer footer footer'; */
   grid-gap: 10px;
   background-color: #2196F3;
-  /* padding: 10px; */
 }
 
 .top-grid-container > div {
@@ -280,7 +268,6 @@ a {
   font-size: 25px;
 }
 
-
 .main-nav {
   display: flex;
   flex-direction: row;
@@ -288,13 +275,13 @@ a {
 }
 
 .navItem {
-  padding-right: 20px;
+  padding-subheader: 20px;
   color: white;
 }
 
 .navItemActive {
   font-weight: bold;
-  padding-right: 20px;
+  padding-subheader: 20px;
 }
 
 .navItemName {
@@ -317,23 +304,12 @@ a {
 
 .pushRight {
   margin-left: auto;
-  padding-right: 50px;
+  padding-subheader: 50px;
 }
 
 .pushLeftRight {
   margin-left: auto;
-  /* padding-right: 10; */
 }
-
-
-
-/* form {
-	max-width: 250px;
-	position: relative;
-	margin: 0px auto 0;
-	font-size: 15px;
-} */
-
 
 .question-form {
   resize: none;
@@ -349,11 +325,8 @@ a {
   color:#252525;
 }
 
-
-
-
 .questionsAnsweredGrid {
-  grid-area: right; 
+  grid-area: subheader; 
   background-color: lightgoldenrodyellow;
 }
 
@@ -370,12 +343,11 @@ a {
 .leaderboard-grid-container {
   display: grid;
   grid-template-columns: auto 50px 10% 2fr 1fr;
-  /* grid-template-rows: 50px 20px; */
   grid-template-areas:
     'header header header header header header'
-    'menu menu menu right right right'
-    'menu menu menu created created created'
-    'menu menu menu score score score';
+    'image image image subheader subheader subheader'  
+    'image image image created created created'
+    'image image image score score score';
   grid-gap: 10px;
   background-color: #2196F3;
   padding: 50px;
@@ -394,6 +366,7 @@ a {
   text-align: center;
   font-size: 25px;
   margin: 30px;
+  color: blue
 }
 
 .login-header {
@@ -402,8 +375,10 @@ a {
   font-weight: bold;
 }
 
-
-
+.login-dropdown {
+  /* max-width: 750px;
+  align-content: center; */
+}
 
 .asked-by {
   grid-area: header; 
@@ -419,20 +394,6 @@ a {
   font-weight: bold;
   color: red
 }
-
-
-/* .optionOne { 
-  grid-area: right; 
-  text-align: center;
-  background-color:lightgoldenrodyellow;
-
-}
-
-.optionTwo { 
-  grid-area: Unanswered;
-  text-align: center;
-  background-color:lightgoldenrodyellow;
-} */
 
 .resultNumb1 {
   grid-area : resultNumb1;
@@ -464,14 +425,13 @@ a {
 .results-grid-container {
   display: grid;
   grid-template-columns: auto 50px 10% 2fr 1fr;
-  /* grid-template-rows: 50px 20px; */
   grid-template-areas:
     'header header header header header header'
     'results results results results results results'
-    'menu menu menu right right right'
-    'menu menu menu resultNumb1 resultNumb1 resultNumb1'
-    'menu menu menu Unanswered Unanswered Unanswered'
-    'menu menu menu resultNumb2 resultNumb2 resultNumb2';
+    'image image image optionOne optionOne optionOne'
+    'image image image resultNumb1 resultNumb1 resultNumb1'
+    'image image image optionTwo optionTwo optionTwo'
+    'image image image resultNumb2 resultNumb2 resultNumb2';
   grid-gap: 10px;
   background-color: #2196F3;
   padding: 50px;
@@ -481,60 +441,10 @@ a {
 
 .results-grid-container > div {
   background-color:lightgoldenrodyellow;
-
   text-align: center;
   padding: 20px 0px;
   font-size: 25px;
 }
-
-.overlay_image{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  /* position: absolute;
-  bottom: 10px;
-  right: 10px; */
-
-  /* grid-column: 2;
-  grid-row: 3 / span 3;
-
-  width: 100%;
-  height: 100%;
-
-  bottom: 10px;
-  right: 10px; */
-
-
-
-  /* grid-column: 6;
-  grid-row: 3;
-
-  align-self: center;
-  justify-self: center;
-
-  z-index: 10;
-
-
-  overflow: hidden;
-  width: 30px;
-  height: 30px;
-  color: rgb(0, 183, 0); */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ul {
   padding-left: 0;
@@ -552,90 +462,10 @@ li {
   margin: 10px;
 }
 
-.tweet {
-  width: 100%;
-  max-width: 590px;
-  padding: 10px;
-  display: flex;
-  margin: 0 auto;
-  border: 1px solid #dad7d7;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.tweet-info {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Hacky but less typing in the video */
-.tweet-info > div > span:first-child {
-  font-weight: bold;
-  margin-right: 5px;
-}
-.tweet-info > div > span:nth-child(2) {
-  color: #969696;
-  font-size: 16px;
-}
-.tweet-info > div > div {
-  color: #969696;
-  font-size: 15px;
-}
-.tweet-info > div > p {
-  font-size: 18px;
-  margin: 10px 0;
-}
-.tweet-icons {
-  display: flex;
-  align-items: center;
-}
-.tweet-icons > span {
-  color: #969696;
-  margin: 0 15px 0 5px;
-  font-size: 18px !important;
-}
-.tweet-icon {
-  font-size: 27px;
-  color: #697784;
-}
-.tweet-icon:hover {
-  color: #00b5d6;
-  cursor: pointer;
-}
-.replying-to {
-  border: none;
-  background: transparent;
-  margin: 0;
-  padding: 0;
-  color: #969696;
-  cursor: pointer;
-}
-
-.heart-button {
-  background: transparent;
-  border: none;
-}
-
 .new-tweet {
   width: 100%;
   max-width: 590px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
-
-.textarea {
-  border-radius: 4px;
-  border: 1px solid #dad7d7;
-  padding: 10px;
-  font-size: 15px;
-  height: 100px;
-}
-
-.tweet-length {
-  text-align: right;
-  margin-top: 10px;
-  font-size: 20px;
-  color: #C3392A;
 }
