@@ -366,11 +366,6 @@ a {
     'menu menu menu right right right'
     'menu menu menu created created created'
     'menu menu menu score score score';
-    /* 'menu menu menu right right right'
-    'menu menu menu right right right'; */
-    /* 'menu menu menu footer footer footer'
-    'menu menu menu Unanswered Unanswered Unanswered'
-    'menu menu menu Answered Answered Answered'; */
   grid-gap: 10px;
   background-color: #2196F3;
   padding: 50px;
@@ -384,9 +379,6 @@ a {
   padding: 20px 0px;
   font-size: 25px;
 }
-
-
-
 
 .login {
   text-align: center;
@@ -403,8 +395,101 @@ a {
 
 
 
+.asked-by {
+  grid-area: header; 
+  background-color: lightgoldenrodyellow;
+}
+
+.results {
+  grid-area: results; 
+  background-color: lightgoldenrodyellow;
+}
 
 
+/* .optionOne { 
+  grid-area: right; 
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+
+}
+
+.optionTwo { 
+  grid-area: Unanswered;
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+} */
+
+.resultNumb1 {
+  grid-area : resultNumb1;
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+}
+
+.resultNumb2 {
+  grid-area : resultNumb2;
+  text-align: center;
+  background-color:lightgoldenrodyellow;
+}
+
+.results-grid-container {
+  display: grid;
+  grid-template-columns: auto 50px 10% 2fr 1fr;
+  /* grid-template-rows: 50px 20px; */
+  grid-template-areas:
+    'header header header header header header'
+    'results results results results results results'
+    'menu menu menu right right right'
+    'menu menu menu resultNumb1 resultNumb1 resultNumb1'
+    'menu menu menu Unanswered Unanswered Unanswered'
+    'menu menu menu resultNumb2 resultNumb2 resultNumb2';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 50px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.results-grid-container > div {
+  background-color:lightgoldenrodyellow;
+
+  text-align: center;
+  padding: 20px 0px;
+  font-size: 25px;
+}
+
+.overlay_image{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  /* position: absolute;
+  bottom: 10px;
+  right: 10px; */
+
+  /* grid-column: 2;
+  grid-row: 3 / span 3;
+
+  width: 100%;
+  height: 100%;
+
+  bottom: 10px;
+  right: 10px; */
+
+
+
+  /* grid-column: 6;
+  grid-row: 3;
+
+  align-self: center;
+  justify-self: center;
+
+  z-index: 10;
+
+
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  color: rgb(0, 183, 0); */
+}
 
 
 

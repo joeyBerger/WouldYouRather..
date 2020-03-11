@@ -9,9 +9,13 @@ const AnsweredPoll = (props) => {
     const optionTwoVotes = question["optionTwo"].votes.length
     const totalVotes = question['optionOne'].votes.length + question['optionTwo'].votes.length
     const optionOnePercent = Math.round(optionOneVotes/totalVotes * 100)/100;
+    const youPickedStr = '(you picked)'
+    const optionOnePicked = userChoice === 'optionOne' ? youPickedStr : ''
+    const optionTwoPicked = userChoice === 'optionTwo' ? youPickedStr : ''
+
     return(
         <div>
-            <h2>
+            {/* <h2>
                 Asked by {name}
             </h2>
             <img src={avatarURL} alt={name}></img>
@@ -45,7 +49,19 @@ const AnsweredPoll = (props) => {
                 <p>
                     Picked!
                 </p>
-            )}
+            )} */}
+                <span className="results-grid-container">
+                  <span className="asked-by">Asked by {name}</span>
+                  <img className="avatarImg" src={avatarURL} alt={name}/>
+                  <span className="results">Results:</span>
+                  <span className="optionOne">{question.optionOne.text}</span>
+                  <span className="resultNumb1">{optionOnePercent * 100 + '%'} - {' '}   
+                {`${optionOneVotes} out of ${totalVotes} votes`} {optionOnePicked}</span>
+                  <span className="optionTwo">{question.optionTwo.text}</span>
+                  <span className="resultNumb2">{(1-optionOnePercent) * 100 + '%'} - {' '}  
+                  {`${optionTwoVotes} out of ${totalVotes} votes`} {optionTwoPicked}</span>
+                  {/* <div className="overlay_image"></div> */}
+                </span>
         </div>
     )
 }

@@ -11,6 +11,7 @@ import NewQuestion from './NewQuestion'
 import QuestionContainer from './QuestionContainer'
 import Leaderboard from './Leaderboard'
 import Logout from './Logout'
+// import {Checkmark} from 'react-checkmark';
 
 class App extends Component {
   componentDidMount() {
@@ -57,6 +58,20 @@ class App extends Component {
 
 
               
+                {/* <span className="results-grid-container">
+                  <span className="asked-by">Asked by Sarah Edo</span>
+                  <img className="avatarImg" src='https://randomuser.me/api/portraits/women/44.jpg'/>
+                  <span className="results">Results:</span>
+                  <span className="optionOne">be telekinetic (your pick)</span>
+                  <span className="resultNumb1">0% / 0 out of 2 votes</span>
+                  <span className="optionTwo">be telekinetic</span>
+                  <span className="resultNumb2">100% / 2 out of 2 votes</span>
+                </span> */}
+
+                {/* <Checkmark className = "overlay_image" /> */}
+
+                {/* <img src='https://cdn.imgbin.com/13/21/5/imgbin-check-mark-checkmark-green-check-illustration-1y0KtqdJ8EKKtJL8zGKmLzvPL.jpg' /> */}
+
 
 
 
