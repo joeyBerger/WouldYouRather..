@@ -22,7 +22,6 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
-          {console.log('this.props.authedUser',this.props.authedUser)}
           <div className='container'>
             {this.props.authedUser === null
               ? null

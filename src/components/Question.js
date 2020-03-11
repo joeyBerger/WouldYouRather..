@@ -14,7 +14,6 @@ class Poll extends Component {
     }    
     componentWillUnmount() {
         this._isMounted = false;
-        console.log('componentWillUnmount componentWillUnmount')
     }
     onRadioClickHandler = (e) => {
         const selectedQuestion = e.target.value

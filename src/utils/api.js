@@ -1,29 +1,12 @@
-// import {
-//   _getUsers,
-//   _getTweets,
-//   _saveLikeToggle,
-//   _saveTweet,
-// } from './_DATA.js'
-
 import {
   _saveQuestion,
   _saveQuestionAnswer,
-  _getUsers1,
+  _getUsers,
   _getQuestions,
-} from './_DATA1.js'
-
-// export function getInitialData () {
-//   return Promise.all([
-//     _getUsers(),
-//     _getTweets(),
-//   ]).then(([users, tweets]) => ({
-//     users,
-//     tweets,
-//   }))
-// }
+} from './_DATA.js'
 
 function getUsers() {
-  return _getUsers1()
+  return _getUsers()
 }
 
 function getQuestions() {
@@ -39,14 +22,6 @@ export function getInitialData () {
     questions,
   }))
 }
-
-// export function saveLikeToggle (info) {
-//   return _saveLikeToggle(info)
-// }
-
-// export function saveTweet (info) {
-//   return _saveTweet(info)
-// }
 
 export function saveQuestion(question) {
   return _saveQuestion(question)
