@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import LeaderBoardEntry from './LeaderBoardEntry'
 
 const Leaderboard = (props) => {
-    const { users } = props
+    const { authedUser, users } = props
+    if (authedUser === null) {         
+        return <Redirect to='/error' />
+    }
     return(
         <div>
             <ul>
@@ -17,7 +21,7 @@ const Leaderboard = (props) => {
     )
 }
 
-function mapStateToProps ({ users }) {
+function mapStateToProps ({ authedUser, users }) {
     return {
         users : Object.keys(users).map(user => users[user]).sort((a,b) => {
             var scoreA = a.questions.length + Object.keys(a.answers).length
@@ -27,7 +31,8 @@ function mapStateToProps ({ users }) {
             if (scoreA > scoreB)
                 return -1
             return 0
-        })
+        }),
+        authedUser
     }
 }
 

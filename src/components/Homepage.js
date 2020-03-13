@@ -29,19 +29,19 @@ class Homepage extends Component {
         let listItems = [];    
         const {questions, users, authedUser} = this.props;
 
+        if (this.state.toPoll === true) {
+            return <Redirect to='/poll' questions={questions}/>
+        } else if (authedUser === null) {         
+            return <Redirect to='/error' />
+        }
+
         //get answered questions from authenticated user
-        let answeredQuestions = Object.keys(users[authedUser].answers).sort((a,b) => {users[authedUser].answers});
+        let answeredQuestions = Object.keys(users[authedUser].answers).sort((a,b) => users[authedUser].answers);
 
         //filter questions by active tab and sort by timestamp
         listItems = Object.keys(questions) 
         .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
         .filter(q => answeredQuestions.includes(q) === (this.state.currentTab === "Answered"))
-
-        if (this.state.toPoll === true) {
-            return <Redirect to='/poll' questions={questions}/>
-        }
-        
-        const activeTemp = this.state.currentTab === 'Unanswered' ? 'unansweredTabActive' : 'unansweredTab'
         
         return(
             <div>

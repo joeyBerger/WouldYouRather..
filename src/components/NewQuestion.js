@@ -37,9 +37,11 @@ class NewQuestion extends Component {
   }
   render() {
     const { toHome, optionOneText, optionTwoText } = this.state
-
+    console.log(this.props)
     if (toHome === true) {
       return <Redirect to='/home' />
+    } else if (this.props.authedUser === null) {         
+      return <Redirect to='/error' />
     }
 
     return (
@@ -71,4 +73,10 @@ class NewQuestion extends Component {
   }
 }
 
-export default connect()(NewQuestion)
+function mapStateToProps ({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(NewQuestion)

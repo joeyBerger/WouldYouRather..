@@ -11,6 +11,7 @@ import NewQuestion from './NewQuestion'
 import QuestionContainer from './QuestionContainer'
 import Leaderboard from './Leaderboard'
 import Logout from './Logout'
+import InaccessiblePage from './InaccessiblePage'
 
 class App extends Component {
   componentDidMount() {
@@ -31,14 +32,15 @@ class App extends Component {
             {this.props.loading === true
               ? null
               : <div>
-                  {/* <Route path ='/login' component={Login} />   //path={["/home", "/users", "/widgets"]} */}
-                  <Route path ={["/login", "/"]} exact component={Login} />
+                  <Route path ={"/"} exact component={Login} />
+                  <Route path ={"/login"} component={Login} />
                   <Route path ='/logout' component={Logout} />
                   <Route path ='/home' component={Homepage} />
                   <Route path ='/question/:id' component={QuestionContainer}/>
                   <Route path ='/answeredpoll/:id' component={AnsweredPoll} />
-                  <Route path ='/leaderboard' component={Leaderboard} />                  
-                  <Route path ='/add' component={NewQuestion} />                  
+                  <Route path ='/leaderboard' component={Leaderboard} />
+                  <Route path ='/add' component={NewQuestion} />
+                  <Route path ='/error' component={InaccessiblePage} />
                 </div>}
           </div>
         </Fragment>

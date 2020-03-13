@@ -9,7 +9,7 @@ const QuestionBlock = (props) => {
         <div className="grid-padding">
             <span className="grid-container">
                 <span className="nameHeader">{author} asks:</span>
-                <img src={avatarURL} className="avatarImg"/>
+                <img src={avatarURL} className="avatarImg" alt={author}/>
                 <span className="optionOne">{questions[id].optionOne.text}</span>
                 <span className="orBreak">OR</span>
                 <span className="optionTwo">{questions[id].optionTwo.text}</span>
