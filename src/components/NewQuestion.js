@@ -27,17 +27,14 @@ class NewQuestion extends Component {
         optionOneText,
         optionTwoText
       }
-    ))
-
-    this.setState(() => ({
+    )).then(() => this.setState(() => ({
       optionOneText: '',
       optionTwoText: '',
       toHome: id ? false : true,
-    }))
+    })))
   }
   render() {
     const { toHome, optionOneText, optionTwoText } = this.state
-    console.log(this.props)
     if (toHome === true) {
       return <Redirect to='/home' />
     } else if (this.props.authedUser === null) {         
@@ -47,7 +44,7 @@ class NewQuestion extends Component {
     return (
         <div className='center'>
         <h3 className="composeHeader">Compose New Question</h3>
-        <form className='new-question' onSubmit={this.handleSubmit}>
+        <form className='text-input' onSubmit={this.handleSubmit}>
           <textarea className = 'question-form'
             placeholder="Questions one..."
             value={optionOneText}
@@ -55,7 +52,7 @@ class NewQuestion extends Component {
           />
           </form>
           <p>Or...</p>
-          <form className='new-question' onSubmit={this.handleSubmit}>
+          <form className='text-input' onSubmit={this.handleSubmit}>
           <textarea className = 'question-form'
             placeholder="Questions two..."
             value={optionTwoText}

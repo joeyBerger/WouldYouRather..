@@ -30,7 +30,7 @@ class Poll extends Component {
 
         dispatch(handleAnsweredQuestion({
             authedUser,
-            qid : id,  //TODO: change id to qid
+            qid : id,
             answer : this.state.selectedQuestion
         }))
     }   

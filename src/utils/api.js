@@ -3,6 +3,7 @@ import {
   _saveQuestionAnswer,
   _getUsers,
   _getQuestions,
+  _addUser
 } from './_DATA.js'
 
 function getUsers() {
@@ -29,5 +30,9 @@ export function saveQuestion(question) {
 
 export function saveQuestionAnswer(answerObj) {
   return _saveQuestionAnswer(answerObj)
+}
+
+export function addUser(user) {
+  return _addUser(user)
 }
 

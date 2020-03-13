@@ -12,6 +12,7 @@ import QuestionContainer from './QuestionContainer'
 import Leaderboard from './Leaderboard'
 import Logout from './Logout'
 import InaccessiblePage from './InaccessiblePage'
+import AddUser from './AddUser'
 
 class App extends Component {
   componentDidMount() {
@@ -27,7 +28,6 @@ class App extends Component {
             {this.props.authedUser === null
               ? null
               : <Nav userName = { users[authedUser].name }/>
-              // : <TopBar />
             }
             {this.props.loading === true
               ? null
@@ -41,6 +41,7 @@ class App extends Component {
                   <Route path ='/leaderboard' component={Leaderboard} />
                   <Route path ='/add' component={NewQuestion} />
                   <Route path ='/error' component={InaccessiblePage} />
+                  <Route path ='/new' component={AddUser} />
                 </div>}
           </div>
         </Fragment>

@@ -11,7 +11,8 @@ class Login extends Component {
         super(props);
         this.state = { 
             loginName: '',
-            toHome: false
+            toHome: false,
+            toAddUser : false
         };   
     }
     onDropDownSelect = (e) => {
@@ -28,10 +29,18 @@ class Login extends Component {
             toHome : true
         }))
     }
+    handleNewUserButton = (e) => {
+        e.preventDefault();
+        this.setState(() => ({
+            toAddUser : true
+        }))
+    }
     render() {
 
         if (this.state.toHome === true) {
           return <Redirect to='/home' />
+        } else if (this.state.toAddUser) {
+            return <Redirect to='/new' />
         }
 
         let options =  Object.keys(this.props.users).map(key => 
@@ -52,6 +61,10 @@ class Login extends Component {
                 <Dropdown className = "login-dropdown" options={options} onChange={this.onDropDownSelect} value={this.state.loginName} placeholder="Select user name" />
                 <button className='btn' onClick = {this.handleLoginButton}>
                     LOGIN
+                </button>
+                <p className="center">New User?</p>
+                <button className='btn' onClick = {this.handleNewUserButton}>
+                    NEW
                 </button>
             </div>
         )

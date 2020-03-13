@@ -119,7 +119,7 @@ function generateUID () {
   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 }
 
-export function _getUsers () {  //TODO: remove 1
+export function _getUsers () {
   return new Promise((res, rej) => {
     setTimeout(() => res({...users}), 1000)
   })
@@ -199,4 +199,45 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
       res()
     }, 500)
   })
+}
+
+export function _addUser (user) {
+  const formattedNewUser = formatNewUser(user)
+  const userExists = findExistingUsers(user.id)
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      if (userExists) {
+        res({
+          error: 'User already exists'
+        })
+      } else {
+        users = {
+          ...users,
+          [user.id] : formattedNewUser
+        }      
+        res(formattedNewUser)
+      }
+    }, 1000)
+  })
+}
+
+function findExistingUsers(id) {
+  var foundExistingId = false
+  Object.keys(users).forEach((storedId) => {
+    if (users[storedId].id === id) {
+      foundExistingId = true
+      return
+    }
+  })
+  return foundExistingId
+}
+
+function formatNewUser (user) {
+  return {
+    id: user.id,
+    name: user.name,
+    avatarURL: user.avatarURL,
+    answers: {},
+    questions: []
+  }
 }
