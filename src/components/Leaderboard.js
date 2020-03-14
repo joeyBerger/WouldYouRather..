@@ -6,7 +6,11 @@ import LeaderBoardEntry from './LeaderBoardEntry'
 const Leaderboard = (props) => {
     const { authedUser, users } = props
     if (authedUser === null) {         
-        return <Redirect to='/error' />
+        return <Redirect to={{
+            pathname: '/error',
+            state: { desiredURL: '/leaderboard' }
+        }}
+        />
     }
     return(
         <div>

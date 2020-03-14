@@ -8,7 +8,11 @@ const QuestionContainer = (props) => {
 
     const {authedUser, users, id} = props
     if (authedUser === null) {         
-        return <Redirect to='/error' />
+        return <Redirect to={{
+            pathname: '/error',
+            state: { desiredURL: `/question/${id}` }
+        }}
+        />
     }
     const answered = users[authedUser].answers[id] === undefined ? false : true
     return(
@@ -28,7 +32,6 @@ function mapStateToProps ({ authedUser, users }, props) {
       id,
       authedUser,
       users
-    //   answered : users[authedUser].answers[id] === undefined ? false : true
     }
   }
 

@@ -36,9 +36,12 @@ class Login extends Component {
         }))
     }
     render() {
-
         if (this.state.toHome === true) {
-          return <Redirect to='/home' />
+            let desiredURL = '/home'
+            if (this.props.location && this.props.location.state && this.props.location.state.desiredURL) {
+                desiredURL = this.props.location.state.desiredURL
+            }
+            return <Redirect to={desiredURL} />
         } else if (this.state.toAddUser) {
             return <Redirect to='/new' />
         }

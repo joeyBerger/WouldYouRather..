@@ -38,12 +38,16 @@ class NewQuestion extends Component {
     if (toHome === true) {
       return <Redirect to='/home' />
     } else if (this.props.authedUser === null) {         
-      return <Redirect to='/error' />
+      return <Redirect to={{
+        pathname: '/error',
+        state: { desiredURL: '/add/' }
+    }}
+    />
     }
 
     return (
         <div className='center'>
-        <h3 className="composeHeader">Compose New Question</h3>
+        <h3 className="composeHeader">Would You Rather</h3>
         <form className='text-input' onSubmit={this.handleSubmit}>
           <textarea className = 'question-form'
             placeholder="Questions one..."
